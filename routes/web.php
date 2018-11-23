@@ -12,10 +12,14 @@
 */
 
 Auth::routes();
-/* CoreUI templates */
+
 
 Route::middleware('auth')->group(function() {
-	Route::view('/', 'includes.blank')->name('home');
-	// Section CoreUI elements
+	Route::get('/', 'DashboardController@index')->name('home');
+	Route::get('/voucher', 'VoucherController@index');
+	Route::get('/product', 'ProductController@index');
+	Route::get('/bank', 'BankController@index');
+	Route::get('/reports', 'ReportsController@index');
+
 	
 });

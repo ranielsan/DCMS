@@ -9,20 +9,20 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="icon-briefcase"></i> Voucher</a>
+        <a class="nav-link" href="/voucher"><i class="icon-briefcase"></i> Voucher</a>
       </li>
 
       <li class="nav-title">
         Management
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="icon-basket"></i> Items/Products</a>
+        <a class="nav-link" href="/product"><i class="icon-basket"></i> Items/Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-bank"></i> Bank</a>
+        <a class="nav-link" href="/bank"><i class="fa fa-bank"></i> Bank</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-file-text-o"></i> Reports</a>
+        <a class="nav-link" href="/reports"><i class="fa fa-file-text-o"></i> Reports</a>
       </li>
       <!-- Dropdown nav -->
       <!-- <li class="nav-item nav-dropdown">

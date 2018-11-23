@@ -54,7 +54,9 @@
       <!-- /.container-fluid -->
       <div class="container-fluid">
         <div class="animate fadeIn">
+          <div style="margin-top: 20px;">
           @yield('content')
+          </div>
         </div>
       </div>
     </main>
