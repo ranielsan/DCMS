@@ -15,10 +15,14 @@ Auth::routes();
 
 
 Route::middleware('auth')->group(function() {
+	//Dashboard
 	Route::get('/', 'DashboardController@index')->name('home');
+
+	//Voucher
 	Route::get('/voucher', 'VoucherController@index');
-	Route::get('/product', 'ProductController@index');
-	Route::get('/bank', 'BankController@index');
+	Route::get('/voucher/create', 'VoucherController@create')->name('voucher.create');
+
+	//Report
 	Route::get('/reports', 'ReportsController@index');
 
 	

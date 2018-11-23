@@ -60,28 +60,33 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
-module.exports = __webpack_require__(2);
+module.exports = __webpack_require__(4);
 
 
 /***/ }),
-/* 1 */
+/* 4 */
 /***/ (function(module, exports) {
 
+$(document).ready(function () {
+	$('#btnAdd').click(function () {
+		var appenditem = "<tr>" + "<td><input type='text' class='form-control' name='item_name[]'></td>" + "<td><input type='text' class='form-control' name='item_amount[]'></td>" + "<td><button class='btn btn-sm btn-danger btnDelete' id='btnDelete' ><i class='fa fa-minus'></></button></td>" + "</tr>";
+		$(appenditem).insertBefore('#AddItems');
+	});
 
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+	$('body').on('click', '.btnDelete', function () {
+		$(this).closest('tr').remove();
+	});
+});
 
 /***/ })
 /******/ ]);
