@@ -13,9 +13,6 @@
       <a class="nav-link" href="/">Dashboard</a>
     </li> 
     
-    <li class="nav-item px-3">
-      <a class="nav-link" href="/sample/dashboard">Samples</a>
-    </li>
   </ul>
   <ul class="nav navbar-nav ml-auto">
     <!--

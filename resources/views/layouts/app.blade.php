@@ -15,7 +15,7 @@
   <meta name="author" content="Łukasz Holeczek">
   <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
   <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
-  <title>CoreUI - Open Source Bootstrap Admin Template</title>
+  <title>Voucher</title>
 
   <!-- Icons -->
   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
@@ -42,26 +42,30 @@
 -->
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
-  @include('panel.navbar')
+  @include('includes.navbar')
   
   <div class="app-body">
-    @include('panel.sidebar')
+    @include('includes.sidebar')
     <!-- Main content -->
     <main class="main">
 
       <!-- Breadcrumb -->
-
-      @yield('content')
+      
       <!-- /.container-fluid -->
+      <div class="container-fluid">
+        <div class="animate fadeIn">
+          @yield('content')
+        </div>
+      </div>
     </main>
 
     
 
   </div>
 
-  @include('panel.footer')
+  @include('includes.footer')
 
-  @include('panel.scripts')
+  @include('includes.scripts')
   @yield('myscript')
 
 </body>

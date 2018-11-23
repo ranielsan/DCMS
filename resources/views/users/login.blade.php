@@ -10,7 +10,7 @@
     <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
     <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
 
-    <title>CoreUI Bootstrap 4 Admin Template</title>
+    <title>Voucher</title>
 
     <!-- Icons -->
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
@@ -27,7 +27,15 @@
 <body class="app flex-row align-items-center">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-5">
+            @if (session('alert'))
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ session('alert') }}
+                </div>
+            @endif
             <div class="card-group">
                 <div class="card p-4">
                     <div class="card-body">
@@ -36,11 +44,13 @@
                         <form method="POST" action="{{ route('login') }}">
 
                             {{ csrf_field() }}
+                            <h6 class="text-muted">Username</h6>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-user"></i></span>
                                 <input type="text" name="email" value="{{ old('email') }}" class="form-control" required
                                        autofocus placeholder="email">
                             </div>
+                            <h6 class="text-muted">Password</h6>
                             <div class="input-group mb-4">
                                 <span class="input-group-addon"><i class="icon-lock"></i></span>
                                 <input type="password" name="password" class="form-control" placeholder="Password"
@@ -57,7 +67,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                <!-- <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                     <div class="card-body text-center">
                         <div>
                             <h2>Sign up</h2>
@@ -66,7 +76,7 @@
                             <a href="{{ route('register') }}" class="btn btn-primary active mt-3">Register Now!</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -35,22 +35,22 @@
               {{ csrf_field() }} 
               <div class="input-group mb-3">
                 <span class="input-group-addon"><i class="icon-user"></i></span>
-                <input type="text" name="name" class="form-control" placeholder="Username">
+                <input type="text" name="name" class="form-control" placeholder="Username" required="">
               </div>              
   
               <div class="input-group mb-3">
                 <span class="input-group-addon">@</span>
-                <input type="text" name="email" class="form-control" placeholder="Email">
+                <input type="email" name="email" class="form-control" placeholder="Email" required="">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-addon"><i class="icon-lock"></i></span>
-                <input type="password" name="password" class="form-control" placeholder="Password">
+                <input type="password" name="password" class="form-control" placeholder="Password" required="">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-addon"><i class="icon-lock"></i></span>
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
+                <input type="password" name="password_confirmation" class="form-control" placeholder="Password" required="">
               </div>
 
               <button type="submit" class="btn btn-block btn-warning">Create Account</button>
@@ -58,20 +58,7 @@
 
             <a href="/login" class="btn btn-block btn-secondary mt-2">You have already an account? Sign in</a>
           </div>
-          <div class="card-footer p-4">
-            <div class="row">
-              <div class="col-6">
-                <button class="btn btn-block btn-facebook" type="button">
-                  <span>facebook</span>
-                </button>
-              </div>
-              <div class="col-6">
-                <button class="btn btn-block btn-twitter" type="button">
-                  <span>twitter</span>
-                </button>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
