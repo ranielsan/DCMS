@@ -50,13 +50,12 @@
     <main class="main">
 
       <!-- Breadcrumb -->
-      @include('panel.breadcrumb')
 
       @yield('content')
       <!-- /.container-fluid -->
     </main>
 
-    @include('panel.asidemenu')
+    
 
   </div>
 

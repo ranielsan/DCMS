@@ -15,7 +15,7 @@ Auth::routes();
 /* CoreUI templates */
 
 Route::middleware('auth')->group(function() {
-	Route::view('/', 'panel.blank');
+	Route::view('/', 'panel.blank')->name('home');
 	// Section CoreUI elements
 	Route::view('/sample/dashboard','samples.dashboard');
 	Route::view('/sample/buttons','samples.buttons');
