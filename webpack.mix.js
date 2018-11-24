@@ -13,4 +13,9 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-   .js('resources/assets/js/voucher.js', 'public/js');
+   .js('resources/assets/js/voucher.js', 'public/js')
+   .js(['node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
+   		'resources/assets/js/datatables.js'], 'public/js/datatables.js')
+   .js('node_modules/sweetalert2/dist/sweetalert2.all.min.js', 'public/js/sweetalert2.js')
+   .styles('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css', 'public/css/datatables.css')
+   .styles('node_modules/sweetalert2/dist/sweetalert2.min.css','public/css/sweetalert2.css');

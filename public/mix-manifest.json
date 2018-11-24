@@ -1,5 +1,9 @@
 {
+    "/js/datatables.js": "/js/datatables.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/voucher.js": "/js/voucher.js"
+    "/js/sweetalert2.js": "/js/sweetalert2.js",
+    "/js/voucher.js": "/js/voucher.js",
+    "/css/datatables.css": "/css/datatables.css",
+    "/css/sweetalert2.css": "/css/sweetalert2.css"
 }

@@ -19,9 +19,12 @@ Route::middleware('auth')->group(function() {
 	Route::get('/', 'DashboardController@index')->name('home');
 
 	//Voucher
-	Route::get('/voucher', 'VoucherController@index');
+	Route::get('/voucher', 'VoucherController@index')->name('voucher.index');
 	Route::get('/voucher/create', 'VoucherController@create')->name('voucher.create');
-
+	Route::post('/voucher/store', 'VoucherController@store')->name('voucher.store');
+	Route::get('/voucher/edit/{voucher}', 'VoucherController@edit')->name('voucher.edit');
+	Route::post('/voucher/update/{voucher}', 'VoucherController@update')->name('voucher.update');
+	Route::get('/voucher/delete/{voucher}', 'VoucherController@destroy')->name('voucher.delete');
 	//Report
 	Route::get('/reports', 'ReportsController@index');
 
