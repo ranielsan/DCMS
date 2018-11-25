@@ -4,6 +4,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/sweetalert2.js": "/js/sweetalert2.js",
+    "/js/jquery.printPage.js": "/js/jquery.printPage.js",
     "/css/datatables.css": "/css/datatables.css",
     "/css/sweetalert2.css": "/css/sweetalert2.css"
 }

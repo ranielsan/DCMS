@@ -6,6 +6,7 @@
 				<div class="col-md-6">
 					<h4 class="text-muted">Check Voucher</h4>
 				</div>
+				
 			</div>
 			<hr />
 			<div class="card">
@@ -34,14 +35,7 @@
 									<td style="padding-left: 20px;font-size: 20px;border-left: 1px solid black;">P {{$particular->amount}}</td>
 								</tr>
 								@endforeach
-								<tr>
-									<td style="padding-left: 20px;font-size: 20px;" class="invisible">No item</td>
-									<td style="padding-left: 20px;font-size: 20px;border-left: 1px solid black;" ></td>
-								</tr>
-								<tr>
-									<td style="padding-left: 20px;font-size: 20px;" class="invisible">No item</td>
-									<td style="padding-left: 20px;font-size: 20px;border-left: 1px solid black;" ></td>
-								</tr>
+								
 								<!-- Border-bottom -->
 								<tr>
 									<td style="padding-left: 20px;font-size: 20px;border-bottom: 1px solid black;"><label class="invisible">No item</label></td>
@@ -73,7 +67,7 @@
 							<table width="100%">
 								<tr>
 									<td style="font-size: 15px;border-top: 1px solid black;" width="240px">RECEIVED THE AMOUNT OF PESOS</td>
-									<td style="font-size: 15px;border-top: 1px solid black;border-bottom: 1px solid black;" >{{$voucher->amount}}</td>
+									<td style="font-size: 15px;border-top: 1px solid black;border-bottom: 1px solid black;" align="center"><div id="convertToString"> {{$voucher->payment_amount}}</div></td>
 								</tr>
 								<tr>
 									<td style="font-size: 15px;border-bottom: 1px solid black;" width="240px">(P {{$voucher->payment_amount}} )</td>
@@ -90,6 +84,16 @@
 							</table>
 						</div>						
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-footer">
+			<div class="row">
+				<div class="col-md-6">
+					<a href="{{route('voucher.index')}}" class="btn btn-sm btn-danger">Back</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{{route('voucher.print', $voucher->id)}}" class="btn btn-sm btn-success" style="float: right;" target="__blank">Print</a>
 				</div>
 			</div>
 		</div>

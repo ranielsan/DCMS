@@ -18,4 +18,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
    		'resources/assets/js/datatables.js'], 'public/js/datatables.js')
    .js('node_modules/sweetalert2/dist/sweetalert2.all.min.js', 'public/js/sweetalert2.js')
    .styles('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css', 'public/css/datatables.css')
-   .styles('node_modules/sweetalert2/dist/sweetalert2.min.css','public/css/sweetalert2.css');
+   .styles('node_modules/sweetalert2/dist/sweetalert2.min.css','public/css/sweetalert2.css')
+   .js('resources/assets/js/jquery.printPage.js', 'public/js');

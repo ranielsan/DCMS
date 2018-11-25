@@ -50,13 +50,13 @@ class VoucherController extends Controller
 
     public function edit($id)
     {
-    	$voucher = Voucher::find($id);
+    	$voucher = Voucher::findorfail($id);
     	return view('voucher.edit', compact('voucher'));
     }
 
      public function update(Request $request, $id)
     {
-    	$voucher = Voucher::find($id);
+    	$voucher = Voucher::findorfail($id);
     	$voucher->payee_name = request('name_payee');
     	$voucher->bank_name = request('bank');
     	$voucher->check_no = request('check_no');
@@ -86,7 +86,7 @@ class VoucherController extends Controller
 
     public function destroy($id)
     {
-    	$voucher = Voucher::find($id);
+    	$voucher = Voucher::findorfail($id);
     	$voucher->delete();
 
     	$particulars = VoucherParticular::where('voucher_id','=',$id)->delete();
@@ -97,5 +97,11 @@ class VoucherController extends Controller
     {
     	$voucher = Voucher::findorfail($id);
     	return view('voucher.show', compact('voucher'));
+    }
+
+    public function print($id)
+    {
+    	$voucher = Voucher::findorfail($id);
+    	return view('voucher.print', compact('voucher'));
     }
 }
