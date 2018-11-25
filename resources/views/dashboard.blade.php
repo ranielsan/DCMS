@@ -106,7 +106,7 @@
 							<td>{{$voucher->payment_amount}}</td>
 							<td>{{$voucher->prepared_by}}</td>
 							<td>{{$voucher->approved_by}}</td>
-							<td>{{$voucher->date}}</td>
+							<td>{{ date('F d, Y', strtotime($voucher->date)) }}</td>
 							<td>
 								<a href="{{ route('voucher.show', $voucher->id) }}" class="btn btn-sm btn-primary"><i class="icon-magnifier"></i></a>
 								<a href="{{ route('voucher.edit', $voucher->id) }}" class="btn btn-sm btn-success"><i class="icon-pencil"></i></a>
