@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function() {
 	Route::get('/voucher/edit/{voucher}', 'VoucherController@edit')->name('voucher.edit');
 	Route::post('/voucher/update/{voucher}', 'VoucherController@update')->name('voucher.update');
 	Route::get('/voucher/delete/{voucher}', 'VoucherController@destroy')->name('voucher.delete');
+	Route::get('/voucher/show/{voucher}', 'VoucherController@show')->name('voucher.show');
 	//Report
 	Route::get('/reports', 'ReportsController@index');
 

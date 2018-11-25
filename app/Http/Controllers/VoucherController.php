@@ -90,9 +90,12 @@ class VoucherController extends Controller
     	$voucher->delete();
 
     	$particulars = VoucherParticular::where('voucher_id','=',$id)->delete();
-
-    	
-
     	return redirect()->route('voucher.index');
+    }
+
+    public function show($id)
+    {
+    	$voucher = Voucher::findorfail($id);
+    	return view('voucher.show', compact('voucher'));
     }
 }

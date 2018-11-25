@@ -36,7 +36,7 @@
 							<td>{{$voucher->approved_by}}</td>
 							<td>{{$voucher->date}}</td>
 							<td>
-								<a href="#" class="btn btn-sm btn-primary"><i class="icon-magnifier"></i></a>
+								<a href="{{ route('voucher.show', $voucher->id) }}" class="btn btn-sm btn-primary"><i class="icon-magnifier"></i></a>
 								<a href="{{ route('voucher.edit', $voucher->id) }}" class="btn btn-sm btn-success"><i class="icon-pencil"></i></a>
 								<a href ="{{ route('voucher.delete', $voucher->id)}}" class="btn btn-sm btn-danger" data-method="delete" id="delete"><i class="icon-trash"></i>
 									
