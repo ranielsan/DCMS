@@ -40,7 +40,13 @@
 			</table>
 		</div>
 	</div>
-	<br/>
+	
+	<div class="row">
+		<div class="col">
+			<label style="float: right; font-size: 10px; margin-right: 20%;">Total: P {{$sum}}</label>
+		</div>
+	</div>
+	
 	<div class="row" >
 		<div class="col" style="width: 50%;">
 			<table width="100%" cellpadding="5">

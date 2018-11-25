@@ -25,7 +25,7 @@
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control" name="item_name[]" required=""></td>
-							<td><input type="text" class="form-control" name="item_amount[]" required=""></td>
+							<td><input type="text" class="form-control numInput" name="item_amount[]" required=""></td>
 							<td><input type="hidden"></td>
 						</tr>
 		
@@ -51,7 +51,7 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="payment_amount"><b>Payment Amount*</b></label>
-						<input type="text" name="payment_amount" id="payment_amount"class="form-control" placeholder="Payment Amount" required="">
+						<input type="text" name="payment_amount" id="payment_amount"class="form-control numInput" placeholder="Payment Amount" required="">
 					</div>
 				</div>
 			</div>

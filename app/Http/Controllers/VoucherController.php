@@ -56,6 +56,7 @@ class VoucherController extends Controller
 
      public function update(Request $request, $id)
     {
+   
     	$voucher = Voucher::findorfail($id);
     	$voucher->payee_name = request('name_payee');
     	$voucher->bank_name = request('bank');
@@ -96,12 +97,14 @@ class VoucherController extends Controller
     public function show($id)
     {
     	$voucher = Voucher::findorfail($id);
-    	return view('voucher.show', compact('voucher'));
+    	$sum = $voucher->particulars->sum('amount');
+    	return view('voucher.show', compact('voucher', 'sum'));
     }
 
     public function print($id)
     {
     	$voucher = Voucher::findorfail($id);
-    	return view('voucher.print', compact('voucher'));
+    	$sum = $voucher->particulars->sum('amount');
+    	return view('voucher.print', compact('voucher', 'sum'));
     }
 }

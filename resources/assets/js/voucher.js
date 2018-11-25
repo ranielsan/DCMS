@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$('#btnAdd').click(function() {
 		var appenditem = "<tr>"
 							+ "<td><input type='text' class='form-control' name='item_name[]' required></td>"
-							+ "<td><input type='text' class='form-control' name='item_amount[]' required></td>"
+							+ "<td><input type='text' pattern='[0-9]+' title='This field allows only numbers' class='form-control ' name='item_amount[]' required ></td>"
 							+ "<td><button class='btn btn-sm btn-danger btnDelete' id='btnDelete' type='button'><i class='fa fa-minus'></></button></td>"
 						+ "</tr>"
 		$(appenditem).insertBefore('#AddItems');
@@ -130,4 +130,24 @@ $(document).ready(function() {
 	var stringnum = numberToEnglish(conv);
 	console.log(stringnum);
 	$('#convertToString').text(stringnum + ' PESOS');
+
+
+    $('.numInput').keypress(validateNumber);
+    function validateNumber(event) {
+    var key = window.event ? event.keyCode : event.which;
+    if (event.keyCode === 8 || event.keyCode === 46) {
+        return true;
+    } else if ( key < 48 || key > 57 ) {
+        return false;
+    } else {
+        return true;
+    }
+};
+
+     $(".allownumericwithoutdecimal").on("keypress keyup blur",function (event) {    
+           $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
 });

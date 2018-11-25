@@ -46,6 +46,12 @@
 						</div>
 					</div>
 					<br/>
+					<div class="row">
+						<div class="col">
+							<label style="float: right; font-size: 20px; margin-right: 20%;">Total: P {{$sum}}</label>
+						</div>
+					</div>
+					<br/>
 					<div class="row" >
 						<div class="col-md-6">
 							<table width="100%" border="1" cellpadding="10">

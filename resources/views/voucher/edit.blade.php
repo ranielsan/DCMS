@@ -33,7 +33,7 @@
 							@foreach($voucher->particulars as $particular)
 								<tr>
 									<td><input type="text" class="form-control" name="item_name[]" required="" value="{{$particular->name}}"></td>
-									<td><input type="text" class="form-control" name="item_amount[]" required="" value="{{$particular->amount}}"></td>
+									<td><input type="text" class="form-control numInput" name="item_amount[]" required="" value="{{$particular->amount}}"></td>
 									<td><button class='btn btn-sm btn-danger btnDelete' id='btnDelete' type='button'><i class='fa fa-minus'></></button></td>
 								</tr>
 							@endforeach
@@ -66,7 +66,7 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="payment_amount"><b>Payment Amount*</b></label>
-						<input type="text" name="payment_amount" id="payment_amount"class="form-control" placeholder="Payment Amount" required="" value="{{$voucher->payment_amount}}">
+						<input type="text" name="payment_amount" id="payment_amount"class="form-control numInput" placeholder="Payment Amount" required="" value="{{$voucher->payment_amount}}">
 					</div>
 				</div>
 			</div>
@@ -101,6 +101,13 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="alert alert-error">
+			<ul>
+				@foreach($errors->all() as $error)
+				<li>{{$error}}</li>
+				@endforeach
+			</ul>
 		</div>
 		<div class="card-footer">
 			<a href="{{ route('voucher.index') }}"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
