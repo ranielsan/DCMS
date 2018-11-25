@@ -86,6 +86,13 @@ class VoucherController extends Controller
 
     public function destroy($id)
     {
-    	dd($id);
+    	$voucher = Voucher::find($id);
+    	$voucher->delete();
+
+    	$particulars = VoucherParticular::where('voucher_id','=',$id)->delete();
+
+    	
+
+    	return redirect()->route('voucher.index');
     }
 }
