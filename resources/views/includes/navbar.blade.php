@@ -3,7 +3,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+  <button class="navbar-toggler sidebar-toggler d-md-down-none invisible" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -52,6 +52,7 @@
         <div class="divider"></div>
         <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a> -->
         
+        <a class="dropdown-item" href="{{ route('changepassword.index') }}"><i class="icon-key"></i> Change Password</a>
         <a class="dropdown-item" href="{{ route('logout') }}" 
           onclick="event.preventDefault(); 
           document.getElementById('logout-form').submit();">

@@ -37,5 +37,6 @@ Route::middleware('auth')->group(function() {
 	//Report
 	Route::get('/reports', 'ReportsController@index');
 
-	
+	//Change Password
+Route::get('/changepassword', 'Auth\ChangePasswordController@index')->name('changepassword.index');
 });
