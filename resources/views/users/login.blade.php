@@ -47,8 +47,8 @@
                             <h6 class="text-muted">Username</h6>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-user"></i></span>
-                                <input type="text" name="email" value="{{ old('email') }}" class="form-control" required
-                                       autofocus placeholder="email">
+                                <input type="text" name="username" value="{{ old('username') }}" class="form-control" required
+                                       autofocus placeholder="Username">
                             </div>
                             <h6 class="text-muted">Password</h6>
                             <div class="input-group mb-4">
@@ -57,12 +57,10 @@
                                        required>
                             </div>
                             <div class="row">
-                                <div class="col-6">
-                                    <button type="submit" class="btn btn-primary px-4">Login</button>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary px-4 form-control">Login</button>
                                 </div>
-                                <div class="col-6 text-right">
-                                    <button type="button" class="btn btn-link px-0">Forgot password?</button>
-                                </div>
+                                
                             </div>
                         </form>
                     </div>

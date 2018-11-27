@@ -32,11 +32,17 @@
             <h1>Register</h1>
             <p class="text-muted">Create your account</p>
             <form method="POST" action="{{ route('register') }}">
-              {{ csrf_field() }} 
+              {{ csrf_field() }}
+
               <div class="input-group mb-3">
                 <span class="input-group-addon"><i class="icon-user"></i></span>
-                <input type="text" name="name" class="form-control" placeholder="Username" required="">
-              </div>              
+                <input type="text" name="username" class="form-control" placeholder="Username" required="">
+              </div> 
+
+              <div class="input-group mb-3">
+                <span class="input-group-addon"><i class="icon-user"></i></span>
+                <input type="text" name="name" class="form-control" placeholder="Name" required="">
+              </div>             
   
               <div class="input-group mb-3">
                 <span class="input-group-addon">@</span>
