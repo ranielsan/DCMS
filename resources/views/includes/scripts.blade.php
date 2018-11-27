@@ -10,4 +10,4 @@
 
 <script src="{{ asset('js/voucher.js')}}"></script>
 <script src="{{ asset('js/datatables.js') }}" ></script>
-<!-- <script src="{{ asset('js/sweetalert2.js') }}" ></script> -->
+<script src="{{ asset('js/sweetalert2.js') }}" ></script>
