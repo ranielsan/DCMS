@@ -110,7 +110,7 @@
 			</ul>
 		</div>
 		<div class="card-footer">
-			<a href="{{ route('voucher.index') }}"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
+			<a href="{{ URL::previous() }}"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
 			<button class="btn btn-sm btn-success" style="float: right;" type="submit">Save</button>
 		</div>
 	</div>

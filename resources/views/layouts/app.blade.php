@@ -43,11 +43,11 @@
 '.footer-fixed'- Fixed footer
 -->
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<body class="app header-fixed aside-menu-fixed aside-menu-hidden">
   @include('includes.navbar')
   
   <div class="app-body">
-    @include('includes.sidebar')
+   
     <!-- Main content -->
     <main class="main">
 

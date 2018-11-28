@@ -29,7 +29,7 @@ class CreateVouchersTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
-        DB::update("ALTER TABLE vouchers AUTO_INCREMENT = 100000000;");
+        
     }
 
     /**

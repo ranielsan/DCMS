@@ -8,7 +8,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-    	$vouchers = Voucher::all();
-    	return view('dashboard', compact('vouchers'));
+    	return redirect()->route('voucher.index');
+    	// $vouchers = Voucher::all();
+    	// return view('dashboard', compact('vouchers'));
     }
 }
