@@ -63,7 +63,7 @@
                             <span class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </span>
-                            <input type="date" class="form-control" name="date" id="date" required="">
+                            <input type="date" class="form-control" name="date" id="date" required="" value="{{ now()->toDateString() }}">
                         </div>
 					</div>
 				</div>

@@ -4,15 +4,16 @@
       <li class="nav-title">
         General
       </li>
-      <li class="nav-item">
-        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/"><i class="icon-speedometer"></i> Dashboard </a>
-      </li>
 
       <li class="nav-item">
         <a class="nav-link {{ Request::is('voucher*') ? 'active' : '' }}" href="/voucher"><i class="icon-briefcase"></i> Voucher</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('reports*') ? 'active' : '' }}" href="/reports"><i class="fa fa-file-text-o"></i> Reports</a>
+        <a class="nav-link {{ Request::is('changepassword*') ? 'active' : '' }}" href="{{route('changepassword.index')}}"><i class="icon-key"></i> Change Password</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+          document.getElementById('logout-form').submit();"><i class="icon-lock"></i> Logout</a>
       </li>
       <!-- Dropdown nav -->
       <!-- <li class="nav-item nav-dropdown">
