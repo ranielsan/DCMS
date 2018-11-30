@@ -45,7 +45,7 @@ class VoucherController extends Controller
     			$particular->save();
     		}
     	}
-    	return redirect()->route('voucher.index');
+    	return redirect()->route('voucher.show', $voucher->id);
     }
 
     public function edit($id)
@@ -82,7 +82,7 @@ class VoucherController extends Controller
     			$particular->save();
     		}
     	}
-    	return redirect()->route('voucher.index');
+    	return redirect()->route('voucher.show', $voucher->id);
     }
 
     public function destroy($id)

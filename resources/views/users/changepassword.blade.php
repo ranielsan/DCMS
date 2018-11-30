@@ -20,17 +20,17 @@
 							<h6 class="text-muted">Old Password</h6>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-lock"></i></span>
-                                <input type="text" name="old_password" class="form-control" required placeholder="Old Password">
+                                <input type="password" name="old_password" class="form-control" required placeholder="Old Password">
                             </div>
                             <h6 class="text-muted">New Password</h6>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-lock"></i></span>
-                                <input type="text" name="new_password" class="form-control"  placeholder="New Password">
+                                <input type="password" name="new_password" class="form-control"  placeholder="New Password">
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-lock"></i></span>
-                                <input type="text" name="confirm_password" class="form-control"  placeholder="Confirm Password">
+                                <input type="password" name="confirm_password" class="form-control"  placeholder="Confirm Password">
                             </div>
                             <a href="{{ URL::previous() }}" class="btn btn-md btn-danger">Back</a>
                             <input type="submit" name="submit" class="btn btn-md btn-success" style="float: right;">

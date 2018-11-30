@@ -17,8 +17,8 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-Route::get('registernewuser', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('registervalidate', 'Auth\RegisterController@register')->name('register');
+// Route::get('registernewuser', 'Auth\RegisterController@showRegistrationForm')->name('register');
+// Route::post('registervalidate', 'Auth\RegisterController@register')->name('register');
 
 
 Route::middleware('auth')->group(function() {
