@@ -48,7 +48,7 @@
                             <!-- <h6 class="text-muted">Username</h6>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-user"></i></span> -->
-                                <input type="hidden" name="username" value="admin" class="form-control" required
+                                <input type="hidden" name="email" value="admin@admin.com" class="form-control" required
                                        autofocus placeholder="Username">
                             <!-- </div> -->
                             <!-- <h6 class="text-muted">Password</h6> -->
