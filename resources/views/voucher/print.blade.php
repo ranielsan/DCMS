@@ -3,7 +3,7 @@
 
 	<div class="row">
 		<div class="col-md-12">
-			<center><p style="font-size: 14px;"><b>Check Voucher</b></p></center>
+			<center><p style="font-size: 16px;"><b>CHECK VOUCHER</b></p></center>
 		</div>
 	</div>
 	<div class="row">
