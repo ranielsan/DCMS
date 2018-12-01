@@ -1,7 +1,11 @@
 @extends('layouts.print')
 @section('content')
 
-			
+	<div class="row">
+		<div class="col-md-12">
+			<center><p style="font-size: 14;"><b>Check Voucher</b></p></center>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<table width="100%">
