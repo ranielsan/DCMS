@@ -39,7 +39,7 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="bank"><b>Bank</b></label>
-						<input type="text" name="bank" id="bank"class="form-control" placeholder="Bank name">
+						<input type="text" name="bank" id="bank"class="form-control" value="Banco de Oro" placeholder="Bank name">
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -82,7 +82,7 @@
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="approved_by"><b>Approved By</b></label>
-						<input type="text" name="approved_by" id="approved_by"class="form-control" placeholder="Approved By">
+						<input type="text" name="approved_by" id="approved_by" value="Atty. Fidel J. Exconde Jr." class="form-control" placeholder="Approved By">
 					</div>
 				</div>
 			</div>

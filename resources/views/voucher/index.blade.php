@@ -19,26 +19,24 @@
 						<tr>
 							<th>No.</th>
 							<th>Name of Payee</th>
+							<th width="300">Particulars</th>
 							<th>Payment Amount</th>
-							<th>Prepared By</th>
-							<th>Approved By</th>
 							<th>Date</th>
 							<th>Action</th>
 						</tr>
 						</thead>
 						<tbody>
-						@foreach($vouchers as $voucher)
+						@foreach($particulars as $particular)
 						<tr>
-							<td>{{$voucher->id}}</td>
-							<td>{{$voucher->payee_name}}</td>
-							<td>{{$voucher->payment_amount}}</td>
-							<td>{{$voucher->prepared_by}}</td>
-							<td>{{$voucher->approved_by}}</td>
-							<td>{{ date('F d, Y', strtotime($voucher->date)) }}</td>
+							<td>{{$particular->voucher->id}}</td>
+							<td>{{$particular->voucher->payee_name}}</td>
+							<td>{{$particular->name}}</td>
+							<td>Php {{$particular->voucher->payment_amount}}</td>
+							<td>{{ date('F d, Y', strtotime($particular->voucher->date)) }}</td>
 							<td>
-								<a href="{{ route('voucher.show', $voucher->id) }}" class="btn btn-sm btn-primary"><i class="icon-magnifier"></i></a>
-								<a href="{{ route('voucher.edit', $voucher->id) }}" class="btn btn-sm btn-success"><i class="icon-pencil"></i></a>
-								<a href ="{{ route('voucher.delete', $voucher->id)}}" class="btn btn-sm btn-danger" data-method="delete" id="delete"><i class="icon-trash"></i>
+								<a href="{{ route('voucher.show', $particular->voucher->id) }}" class="btn btn-sm btn-primary"><i class="icon-magnifier"></i></a>
+								<a href="{{ route('voucher.edit', $particular->voucher->id) }}" class="btn btn-sm btn-success"><i class="icon-pencil"></i></a>
+								<a href ="{{ route('voucher.delete', $particular->voucher->id)}}" class="btn btn-sm btn-danger" data-method="delete" id="delete"><i class="icon-trash"></i>
 									
 								</a>
 							</td>
