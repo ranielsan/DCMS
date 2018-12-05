@@ -22,6 +22,10 @@ class VoucherController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'voucher_id' => 'unique:vouchers',
+            
+        ]);
     	$voucher = new Voucher;
     	$voucher->payee_name = request('name_payee');
     	$voucher->bank_name = request('bank');
@@ -33,7 +37,8 @@ class VoucherController extends Controller
     	$voucher->approved_by = request('approved_by');
     	$voucher->created_by = Auth::user()->name;
     	$voucher->updated_by = Auth::user()->name;
-    	$voucher->save();
+        $voucher->voucher_id = request('voucher_id');
+     	$voucher->save();
 
     	$particulars = request('item_name');
     	$amount = request('item_amount');
@@ -57,7 +62,10 @@ class VoucherController extends Controller
 
      public function update(Request $request, $id)
     {
-   
+        $request->validate([
+            'voucher_id' => 'unique:vouchers',
+            
+        ]);
     	$voucher = Voucher::findorfail($id);
     	$voucher->payee_name = request('name_payee');
     	$voucher->bank_name = request('bank');
@@ -69,6 +77,7 @@ class VoucherController extends Controller
     	$voucher->approved_by = request('approved_by');
     	$voucher->created_by = Auth::user()->name;
     	$voucher->updated_by = Auth::user()->name;
+        $voucher->voucher_id = request('voucher_id');
     	$voucher->save();
 
     	$particularsdelete = VoucherParticular::where('voucher_id','=',$id)->delete();

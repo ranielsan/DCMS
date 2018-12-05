@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+@if($errors->count())
+	<div class="alert alert-danger">
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	            <span aria-hidden="true">&times;</span>
+	        </button>
+	    <ul>
+	        @foreach($errors->all() as $error)
+	        <li>{{$error}}</li>
+	        @endforeach
+	    </ul>
+	</div>
+@endif
 <form method="post" action="{{ route('voucher.store') }}">
 	{{ csrf_field() }}
 	<div class="card">
@@ -14,6 +26,12 @@
 						<input type="text" name="name_payee" id="payee"class="form-control" placeholder="Name of Payee" required="">
 					</div>		
 				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="payee"><b>No.*</b></label>
+						<input type="text" name="voucher_id" id="payee"class="form-control numInput" placeholder="Voucher ID" required="">
+					</div>		
+				</div>
 			</div>
 			<br />
 			<div class="row">
@@ -25,7 +43,7 @@
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control" name="item_name[]" required=""></td>
-							<td><input type="text" class="form-control numInput" name="item_amount[]" required=""></td>
+							<td><input type="text" class="form-control numInput" name="item_amount[]"></td>
 							<td><input type="hidden"></td>
 						</tr>
 		
@@ -88,7 +106,7 @@
 			</div>
 		</div>
 		<div class="card-footer">
-			<a href="{{ URL::previous() }}"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
+			<a href="{{ route('voucher.index') }}"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
 			<button class="btn btn-sm btn-success" style="float: right;" type="submit">Save</button>
 		</div>
 	</div>

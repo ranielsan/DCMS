@@ -11,7 +11,7 @@
 			<table width="100%">
 				<tr>
 					<td width="60%" style="font-size: 12px;"><b>NAME OF PAYEE:</b> {{$voucher->payee_name}}</td>
-					<td width="30%" style="font-size: 12px;"><b>NO.</b>: {{$voucher->id}}</td>
+					<td width="30%" style="font-size: 12px;"><b>NO.</b>: {{$voucher->voucher_id}}</td>
 				</tr>
 			</table>
 		</div>
@@ -27,7 +27,11 @@
 				@foreach($voucher->particulars as $particular)
 				<tr>
 					<td style="padding-left: 20px;font-size: 12px;">{{$particular->name}}</td>
-					<td style="padding-left: 20px;font-size: 12px;border-left: 1px solid black;">P {{ number_format($particular->amount, 2)}}</td>
+					<td style="padding-left: 20px;font-size: 12px;border-left: 1px solid black;">
+						@if(!empty($particular->amount))
+							P {{ number_format($particular->amount, 2)}}
+						@endif
+					</td>
 				</tr>
 				@endforeach
 				<tr>

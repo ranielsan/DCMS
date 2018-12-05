@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+@if($errors->count())
+	<div class="alert alert-danger">
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	            <span aria-hidden="true">&times;</span>
+	        </button>
+	    <ul>
+	        @foreach($errors->all() as $error)
+	        <li>{{$error}}</li>
+	        @endforeach
+	    </ul>
+	</div>
+@endif
 <form method="post" action="{{ route('voucher.update', $voucher->id) }}">
 	{{ csrf_field() }}
 	<div class="card">
@@ -16,8 +28,8 @@
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="payee"><b>No.</b></label>
-						<input type="text" name="name_payee" id="payee"class="form-control" placeholder="Name of Payee" required="" value="{{$voucher->id}}" disabled="">
+						<label for="payee"><b>No.*</b></label>
+						<input type="text" name="voucher_id" id="payee"class="form-control numInput" placeholder="Voucher ID" required="" value="{{$voucher->voucher_id}}">
 					</div>		
 				</div>
 			</div>
@@ -33,7 +45,7 @@
 							@foreach($voucher->particulars as $particular)
 								<tr>
 									<td><input type="text" class="form-control" name="item_name[]" required="" value="{{$particular->name}}"></td>
-									<td><input type="text" class="form-control numInput" name="item_amount[]" required="" value="{{$particular->amount}}"></td>
+									<td><input type="text" class="form-control numInput" name="item_amount[]" value="{{$particular->amount}}"></td>
 									<td><button class='btn btn-sm btn-danger btnDelete' id='btnDelete' type='button'><i class='fa fa-minus'></></button></td>
 								</tr>
 							@endforeach
@@ -110,7 +122,7 @@
 			</ul>
 		</div>
 		<div class="card-footer">
-			<a href="{{ URL::previous() }}"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
+			<a href="{{ route('voucher.index') }}"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
 			<button class="btn btn-sm btn-success" style="float: right;" type="submit">Save</button>
 		</div>
 	</div>

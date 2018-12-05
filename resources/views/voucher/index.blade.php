@@ -28,10 +28,14 @@
 						<tbody>
 						@foreach($particulars as $particular)
 						<tr>
-							<td>{{$particular->voucher->id}}</td>
+							<td>{{$particular->voucher->voucher_id}}</td>
 							<td>{{$particular->voucher->payee_name}}</td>
 							<td>{{$particular->name}}</td>
-							<td>Php {{$particular->voucher->payment_amount}}</td>
+							<td>
+								@if(!empty($particular->amount))
+								Php {{$particular->amount}}
+								@endif
+							</td>
 							<td>{{ date('F d, Y', strtotime($particular->voucher->date)) }}</td>
 							<td>
 								<a href="{{ route('voucher.show', $particular->voucher->id) }}" class="btn btn-sm btn-primary"><i class="icon-magnifier"></i></a>
