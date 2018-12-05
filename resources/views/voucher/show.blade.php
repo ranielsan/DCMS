@@ -32,7 +32,7 @@
 								@foreach($voucher->particulars as $particular)
 								<tr>
 									<td style="padding-left: 20px;font-size: 20px;">{{$particular->name}}</td>
-									<td style="padding-left: 20px;font-size: 20px;border-left: 1px solid black;">P {{$particular->amount}}</td>
+									<td style="padding-left: 20px;font-size: 20px;border-left: 1px solid black;">P {{ number_format($particular->amount, 2)}}</td>
 								</tr>
 								@endforeach
 								
@@ -48,7 +48,7 @@
 					<br/>
 					<div class="row">
 						<div class="col">
-							<label style="float: right; font-size: 20px; margin-right: 20%;">Total: P {{$sum}}</label>
+							<label style="float: right; font-size: 20px; margin-right: 20%;">Total: P {{number_format($sum, 2)}}</label>
 						</div>
 					</div>
 					<br/>
@@ -76,7 +76,7 @@
 									<td style="font-size: 15px;border-top: 1px solid black;border-bottom: 1px solid black;" align="center"><div id="convertToString"> {{$voucher->payment_amount}}</div></td>
 								</tr>
 								<tr>
-									<td style="font-size: 15px;border-bottom: 1px solid black;" width="240px">(P {{$voucher->payment_amount}} )</td>
+									<td style="font-size: 15px;border-bottom: 1px solid black;" width="240px">(P {{number_format($voucher->payment_amount, 2)}} )</td>
 									<td style="font-size: 15px;" >IN FULL PAYMENT OF THE AMOUNT ABOVE</td>
 								</tr>
 							</table>

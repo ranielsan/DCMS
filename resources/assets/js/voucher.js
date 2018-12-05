@@ -5,10 +5,21 @@ $(document).ready(function() {
 	$('#btnAdd').click(function() {
 		var appenditem = "<tr>"
 							+ "<td><input type='text' class='form-control' name='item_name[]' required></td>"
-							+ "<td><input type='text' pattern='[0-9]+' title='This field allows only numbers' class='form-control ' name='item_amount[]' required ></td>"
+							+ "<td><input type='text' id='numInput' class='form-control ' name='item_amount[]' required ></td>"
 							+ "<td><button class='btn btn-sm btn-danger btnDelete' id='btnDelete' type='button'><i class='fa fa-minus'></></button></td>"
 						+ "</tr>"
 		$(appenditem).insertBefore('#AddItems');
+        $('#numInput').keypress(validateNumber);
+            function validateNumber(event) {
+            var key = window.event ? event.keyCode : event.which;
+            if (event.keyCode === 8 || event.keyCode === 46) {
+                return true;
+            } else if ( key < 48 || key > 57 ) {
+                return false;
+            } else {
+                return true;
+            }
+        };
 	});
 
 	$('body').on('click','.btnDelete', function() {
@@ -38,98 +49,7 @@ $(document).ready(function() {
         });
     });
 
-    function numberToEnglish(n, custom_join_character) {
-
-    var string = n.toString(),
-        units, tens, scales, start, end, chunks, chunksLen, chunk, ints, i, word, words;
-
-    var and = custom_join_character || 'AND';
-
-    /* Is number zero? */
-    if (parseInt(string) === 0) {
-        return 'zero';
-    }
-
-    /* Array of units as words */
-    units = ['', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN', 'FOURTEEN', 'FIFTEEN', 'SIXTEEN', 'SEVENTEEN', 'EIGHTEEN', 'NINETEEN'];
-
-    /* Array of tens as words */
-    tens = ['', '', 'TWENTY', 'THIRTY', 'FORTY', 'FIFTY', 'SIXTY', 'SEVENTY', 'EIGHTY', 'NINETY'];
-
-    /* Array of scales as words */
-    scales = ['', 'THOUSAND', 'MILLION', 'BILLION', 'TRILLION', 'QUADRILLION', 'QUINTILLION', 'SEXTILLION', 'SEPTILLION', 'OCTILLION', 'NONILLION', 'DECILLION', 'UNDECILLION', 'DUODECILLION', 'TREDECILLION', 'QUATTTUOR-DECILLION', 'QUINDECILLION', 'SEXDECILLION', 'SEPTEN-DECILLION', 'OCTODECILLION', 'NOVEMDECILLION', 'VIGINTILLION', 'CENTILLION'];
-
-    /* Split user arguemnt into 3 digit chunks from right to left */
-    start = string.length;
-    chunks = [];
-    while (start > 0) {
-        end = start;
-        chunks.push(string.slice((start = Math.max(0, start - 3)), end));
-    }
-
-    /* Check if function has enough scale words to be able to stringify the user argument */
-    chunksLen = chunks.length;
-    if (chunksLen > scales.length) {
-        return '';
-    }
-
-    /* Stringify each integer in each chunk */
-    words = [];
-    for (i = 0; i < chunksLen; i++) {
-
-        chunk = parseInt(chunks[i]);
-
-        if (chunk) {
-
-            /* Split chunk into array of individual integers */
-            ints = chunks[i].split('').reverse().map(parseFloat);
-
-            /* If tens integer is 1, i.e. 10, then add 10 to units integer */
-            if (ints[1] === 1) {
-                ints[0] += 10;
-            }
-
-            /* Add scale word if chunk is not zero and array item exists */
-            if ((word = scales[i])) {
-                words.push(word);
-            }
-
-            /* Add unit word if array item exists */
-            if ((word = units[ints[0]])) {
-                words.push(word);
-            }
-
-            /* Add tens word if array item exists */
-            if ((word = tens[ints[1]])) {
-                words.push(word);
-            }
-
-            /* Add 'and' string after units or tens integer if: */
-            if (ints[0] || ints[1]) {
-
-                /* Chunk has a hundreds integer or chunk is the first of multiple chunks */
-                if (ints[2] || !i && chunksLen) {
-                    words.push(and);
-                }
-
-            }
-
-            /* Add hundreds word if array item exists */
-            if ((word = units[ints[2]])) {
-                words.push(word + ' HUNDRED');
-            }
-
-        }
-
-    }
-
-    return words.reverse().join(' ');
-
-}
-	var conv = $('#convertToString').text();
-	var stringnum = numberToEnglish(conv);
-	console.log(stringnum);
-	$('#convertToString').text(stringnum + ' PESOS');
+	
 
 
     $('.numInput').keypress(validateNumber);
@@ -143,11 +63,97 @@ $(document).ready(function() {
         return true;
     }
 };
+function spellOut(amount) {
+    var exp = ["", "THOUSAND", "MILLION", "BILLION", "TRILLION"];
+    var dec = ["", "", "TWENTY", "THIRTY", "FORTY", "FIFTY", "SIXTY", "SEVENTY", "EIGHTY", "NINETY"];
+    var sing = ["", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN",
+                "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN"];
 
-     $(".allownumericwithoutdecimal").on("keypress keyup blur",function (event) {    
-           $(this).val($(this).val().replace(/[^\d].+/, ""));
-            if ((event.which < 48 || event.which > 57)) {
-                event.preventDefault();
+    // Round to two decimal points and format as a string
+    var str = parseFloat(amount).toFixed(2);
+
+    // Extract the integer part and the fraction part
+    var intStr = str.substring(0, str.length - 3);
+    var frac = str.substring(str.length - 2);
+
+    // Compute the number of three-digit groups
+    var tot = "";
+    var len = intStr.length;
+    var grp = Math.floor(len / 3) + (len % 3 == 0 ? 0 : 1);
+
+    // For each group ...
+    for (var g = grp; g > 0; --g) {
+        var p = len - 3 * g;
+        var s = "";
+
+        // Format the hundreds
+        if (p >= 0 && intStr[p] != '0') {
+            s += sing[parseInt(intStr[p])] + " HUNDRED";
+        }
+
+        // Format values between 1 and 99
+        if (p >= -1) {
+            if (intStr[p + 1] < '2') {
+                if (s != "") s += " ";
+                s += sing[10 * parseInt(intStr[p + 1]) + parseInt(intStr[p + 2])];
+            } else {
+                if (s != "") s += " ";
+                s += dec[parseInt(intStr[p + 1])];
+                if (intStr[p + 2] > '0') {
+                    s += '-' + sing[parseInt(intStr[p + 2])];
+                }
             }
-        });
+
+        // Special case if amount < 10
+        } else if (intStr[p + 2] > '0') {
+            if (s != "") s += " ";
+            s += sing[parseInt(intStr[p + 2])];
+        }
+
+        // Add exponent descriptor
+        if (s != "") {
+            var e = exp[g - 1];
+            if (e != "") {
+                s += " " + e;
+            }
+        }
+
+        // Append to total string
+        if (tot != "") tot += " ";
+        tot += s;
+    }
+
+    // Append "dollar(s)"
+    var d = parseInt(intStr);
+    if (d == 1) {
+        tot += " PESOS";
+    } else if (d > 1) {
+        tot += " PESOS";
+    }
+
+    // Append fractional part, if not zero
+    if (frac != "00") {
+        if (tot != "") tot += " AND ";
+        var c = "";
+        if (frac[0] < '2') {
+            c = sing[10 * parseInt(frac[0]) + parseInt(frac[1])];
+        } else {
+            c = dec[parseInt(frac[0])];
+            if (frac[1] > '0') {
+                c += '-' + sing[parseInt(frac[1])];
+            }
+        }
+        tot += c + (frac == "01" ? " CENT" : " CENTS");
+    }
+
+    // Special case if amount == 0
+    if (tot == "") tot = "ZERO";
+
+    return tot;
+}
+    var conv = $('#convertToString').text();
+    var stringnum = spellOut(conv);
+    console.log(stringnum);
+    $('#convertToString').text(stringnum);
+
 });
