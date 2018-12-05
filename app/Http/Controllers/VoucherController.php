@@ -62,10 +62,7 @@ class VoucherController extends Controller
 
      public function update(Request $request, $id)
     {
-        $request->validate([
-            'voucher_id' => 'unique:vouchers',
-            
-        ]);
+        
     	$voucher = Voucher::findorfail($id);
     	$voucher->payee_name = request('name_payee');
     	$voucher->bank_name = request('bank');
