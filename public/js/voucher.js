@@ -87,7 +87,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 $(document).ready(function () {
 
     $('#btnAdd').click(function () {
-        var appenditem = "<tr>" + "<td><input type='text' class='form-control' name='item_name[]' required></td>" + "<td><input type='text'  class='form-control ' name='item_amount[]' required ></td>" + "<td><button class='btn btn-sm btn-danger btnDelete' id='btnDelete' type='button'><i class='fa fa-minus'></></button></td>" + "</tr>";
+        var appenditem = "<tr>" + "<td><input type='text' class='form-control' name='item_name[]' required></td>" + "<td><input type='text' pattern='[0-9]+' title='This field allows only numbers' class='form-control ' name='item_amount[]' required ></td>" + "<td><button class='btn btn-sm btn-danger btnDelete' id='btnDelete' type='button'><i class='fa fa-minus'></></button></td>" + "</tr>";
         $(appenditem).insertBefore('#AddItems');
     });
 
