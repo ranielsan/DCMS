@@ -87,7 +87,7 @@
 						RECEIVED THE AMOUNT OF PESOS 
 						<div id="convertToString" style="border-bottom: 1px solid black;display: inline;font-size: 12px;">{{$voucher->payment_amount}}</div> 
 						<div style="border-bottom: 1px solid black;display: inline;font-size: 12px;">
-						(P {{number_format($voucher->payment_amount, 2)}}
+						(P {{number_format($voucher->payment_amount, 2)}} )
 						</div> &nbsp;  &nbsp; 
 						 IN FULL PAYMENT OF THE AMOUNT ABOVE.
 

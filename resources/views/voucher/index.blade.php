@@ -33,7 +33,7 @@
 							<td>{{$particular->name}}</td>
 							<td>
 								@if(!empty($particular->amount))
-								Php {{$particular->amount}}
+								Php {{number_format($particular->amount)}}
 								@endif
 							</td>
 							<td>{{ date('F d, Y', strtotime($particular->voucher->date)) }}</td>
