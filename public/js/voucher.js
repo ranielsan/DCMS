@@ -104,7 +104,7 @@ $(document).ready(function () {
 
     $('body').on('click', '.btnDelete', function () {
         $(this).closest('tr').remove();
-    });
+    }).on('keypress', '#numInput', validateNumber);
 
     $('body').on('click', 'a[data-method=delete]', function (e) {
         /**
