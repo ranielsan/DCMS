@@ -4,17 +4,42 @@
       <li class="nav-title">
         General
       </li>
-
-      <li class="nav-item">
-        <a class="nav-link {{ Request::is('voucher*') ? 'active' : '' }}" href="/voucher"><i class="icon-briefcase"></i> Voucher</a>
+      @if(Auth()->user()->role_name == 'Administrator')
+       <li class="nav-item">
+        <a class="nav-link {{ Request::is('administrator*') ? 'active' : '' }}" href="/administrator"><i class="icon-briefcase"></i> User Management</a>
       </li>
-      <li class="nav-item">
+            <li class="nav-item">
         <a class="nav-link {{ Request::is('changepassword*') ? 'active' : '' }}" href="{{route('changepassword.index')}}"><i class="icon-key"></i> Change Password</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); 
           document.getElementById('logout-form').submit();"><i class="icon-lock"></i> Logout</a>
       </li>
+      @else
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/"><i class="icon-speedometer"></i> Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('patient*') ? 'active' : '' }}" href="/patient"><i class="icon-briefcase"></i> Patient</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('inventory*') ? 'active' : '' }}" href="/inventory"><i class="fa fa-dropbox"></i> Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('schedule*') ? 'active' : '' }}" href="/schedule"><i class="fa fa-calendar"></i> Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('reports*') ? 'active' : '' }}" href="/reports"><i class="fa fa-file-text-o"></i> Audit Trail</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link {{ Request::is('changepassword*') ? 'active' : '' }}" href="{{route('changepassword.index')}}"><i class="icon-key"></i> Change Password</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+          document.getElementById('logout-form').submit();"><i class="icon-lock"></i> Logout</a>
+      </li> -->
+      @endif
       <!-- Dropdown nav -->
       <!-- <li class="nav-item nav-dropdown">
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Icons</a>

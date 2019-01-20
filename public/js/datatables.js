@@ -25669,6 +25669,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#Tblvoucher').DataTable({
 		"order": [["0", "desc"]]
 	});
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#Tbl').DataTable();
 });
 
 /***/ })

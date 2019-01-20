@@ -10,7 +10,7 @@
     <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
     <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
 
-    <title>Voucher</title>
+    <title>DCMS</title>
 
     <!-- Icons -->
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
@@ -39,19 +39,19 @@
             <div class="card-group">
                 <div class="card p-4">
                     <div class="card-body">
-                        <!-- <h1>Login</h1> -->
-                        <!-- <p class="text-muted">Sign In to your account</p> -->
-                        <p class="text-muted">Please enter password to login</p>
+                        <h1>Login</h1>  
+                        <p class="text-muted">Sign In to your account</p>
+                        
                         <form method="POST" action="{{ route('login') }}">
 
                             {{ csrf_field() }}
-                            <!-- <h6 class="text-muted">Username</h6>
+                            <h6 class="text-muted">Username</h6>
                             <div class="input-group mb-3">
-                                <span class="input-group-addon"><i class="icon-user"></i></span> -->
-                                <input type="hidden" name="email" value="admin@admin.com" class="form-control" required
+                                <span class="input-group-addon"><i class="icon-user"></i></span>
+                                <input type="text" name="username" class="form-control" required
                                        autofocus placeholder="Username">
-                            <!-- </div> -->
-                            <!-- <h6 class="text-muted">Password</h6> -->
+                            </div>
+                            <h6 class="text-muted">Password</h6>
                             <div class="input-group mb-4">
                                 <span class="input-group-addon"><i class="icon-lock"></i></span>
                                 <input type="password" name="password" class="form-control" placeholder="Password"

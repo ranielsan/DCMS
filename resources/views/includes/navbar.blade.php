@@ -2,16 +2,16 @@
   <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto invisible" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand invisible" href="#"></a>
-  <button class="navbar-toggler sidebar-toggler d-md-down-none invisible" type="button">
+  <a class="navbar-brand" href="#"><img src = "/img/logo.jpg"/ style="width: 45px;"> DCMS</a>
+  <button class="navbar-toggler sidebar-toggler d-md-down-none  invisible" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <ul class="nav navbar-nav d-md-down-none">
     
-    <!-- <li class="nav-item px-3">
+  <!--   <li class="nav-item px-3">
       <a class="nav-link" href="/">Dashboard</a>
-    </li>  -->
+    </li> --> 
     
   </ul>
   <ul class="nav navbar-nav ml-auto">
