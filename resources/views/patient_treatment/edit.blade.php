@@ -32,6 +32,13 @@
                     </div>
                     <br/>
                     <hr/>
+                    <div class="row">
+                    	<div class="col-md-12">
+                    		<center>
+                    			<img src="/img/tooth-chart.jpg" width="700">
+                    		</center>
+                    	</div>
+                    </div>
 					<div class="row">
 						<div class="col-md-3">
 							<h5 for="treatment_type">Treatment Type :</h5>

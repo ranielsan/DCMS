@@ -92,6 +92,9 @@
 					
 					<div class="card">
 						<div class="card-body">
+							<center>
+								<img src="/img/calendar.png">
+							</center>
 						</div>
 					</div>
 					

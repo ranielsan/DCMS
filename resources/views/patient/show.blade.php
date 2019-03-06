@@ -6,6 +6,9 @@
 				<div class="col-md-6">
 					<h4 class="text-muted">Patient Information</h4>
 				</div>
+				<div class="col-md-6">
+					<a href="#" class="btn btn-sm btn-primary" style="float: right;"><i class="fa fa-print"></i> Print</a>
+				</div>
 			</div>
 			<div class="row mt-4 mb-4">
 	            <div class="col">
